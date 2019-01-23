@@ -5,10 +5,10 @@
  *      Author: Scott
  */
 
-#include <SerialIO.h>
 #include <time.h>
 #include <unistd.h>
 #include <string>
+#include <ahrs/SerialIO.h>
 
 static const double IO_TIMEOUT_SECONDS = 1.0;
 

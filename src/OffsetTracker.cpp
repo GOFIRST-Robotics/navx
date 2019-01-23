@@ -5,7 +5,7 @@
  *      Author: Scott
  */
 
-#include <OffsetTracker.h>
+#include <ahrs/OffsetTracker.h>
 
 OffsetTracker::OffsetTracker(int history_length) {
     history_len = history_length;

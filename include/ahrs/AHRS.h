@@ -8,7 +8,7 @@
 #ifndef SRC_AHRS_H_
 #define SRC_AHRS_H_
 
-#include "ITimestampedDataSubscriber.h"
+#include "ahrs/ITimestampedDataSubscriber.h"
 #include <memory>
 #include <string>
 

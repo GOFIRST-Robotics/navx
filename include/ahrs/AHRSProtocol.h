@@ -39,8 +39,8 @@ THE SOFTWARE.
 /* Stream type, in order to enable AHRS Updates.                             */
 /*****************************************************************************/
 
-#include "IMUProtocol.h"
-#include "IMURegisters.h"
+#include "ahrs/IMUProtocol.h"
+#include "ahrs/IMURegisters.h"
 
 #include <stdio.h>
 #include <stdlib.h>

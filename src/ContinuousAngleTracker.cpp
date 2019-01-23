@@ -5,7 +5,7 @@
  *      Author: Scott
  */
 
-#include <ContinuousAngleTracker.h>
+#include <ahrs/ContinuousAngleTracker.h>
 
 ContinuousAngleTracker::ContinuousAngleTracker() {
     this->last_angle = 0.0f;

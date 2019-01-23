@@ -1,12 +1,12 @@
 #include <iostream>
-#include <TimeStamp.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <AHRS.h>
 #include <chrono>
 #include <thread>
 #include <iomanip>
 #include <signal.h>
+
+#include <ahrs/AHRS.h>
 
 volatile sig_atomic_t sflag = 0;
 

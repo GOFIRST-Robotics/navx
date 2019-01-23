@@ -8,17 +8,17 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
-#include <AHRS.h>
-#include <AHRSProtocol.h>
 #include <ctime>
 #include <pthread.h>
-#include "IIOProvider.h"
-#include "IIOCompleteNotification.h"
-#include "IBoardCapabilities.h"
-#include "InertialDataIntegrator.h"
-#include "OffsetTracker.h"
-#include "ContinuousAngleTracker.h"
-#include "SerialIO.h"
+#include <ahrs/AHRS.h>
+#include <ahrs/AHRSProtocol.h>
+#include "ahrs/IIOProvider.h"
+#include "ahrs/IIOCompleteNotification.h"
+#include "ahrs/IBoardCapabilities.h"
+#include "ahrs/InertialDataIntegrator.h"
+#include "ahrs/OffsetTracker.h"
+#include "ahrs/ContinuousAngleTracker.h"
+#include "ahrs/SerialIO.h"
 
 static const uint8_t    NAVX_DEFAULT_UPDATE_RATE_HZ         = 60;
 static const int        YAW_HISTORY_LENGTH                  = 10;

@@ -5,7 +5,7 @@
  *      Author: Scott
  */
 
-#include <InertialDataIntegrator.h>
+#include <ahrs/InertialDataIntegrator.h>
 
 InertialDataIntegrator::InertialDataIntegrator() {
     ResetDisplacement();
