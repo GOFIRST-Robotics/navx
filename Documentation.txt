@@ -1,0 +1,9 @@
+if you can't get g++ to compile when your dynamic library is in the
+  /usr/local/lib/ folder as the library cannot be found by the linker then try 
+  running the following command and rebooting your system
+this will tell the linker that it should look in /usr/local/lib/ for
+  dynamic libraries which it is not currently doing if it can not find the 
+  library even though you know that the library is there and functioning 
+  (likely compiles using a makefile but not in g++)
+
+sudo ldconfig /usr/local/lib
