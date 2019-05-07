@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>navx</name>
+  <version>1.0.0</version>
+  <description>
+    AHRS library for Nav X Micro used by University of Minnesota Robotics
+  </description>
+
+  <maintainer email="need@to.do">todo</maintainer>
+
+  <license>MIT</license>
+
+  <url type="website">todo</url>
+  <url type="repository">https://github.com/GOFIRST-Robotics/navXTimeSync</url>
+  <url type="bugtracker">todo</url>
+
+  <author email="need@to.do">todo</author>
+  <author email="need@to.do">todo</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <test_depend>boost</test_depend>
+
+</package>

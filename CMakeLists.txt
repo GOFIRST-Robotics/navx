@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.8)
-project (NavX)
+project (navx)
 set(CMAKE_BUILD_TYPE Release)
 add_definitions(-std=c++11 -Wall -Wextra -Wno-switch)
 
@@ -8,6 +8,22 @@ FIND_PACKAGE (Threads REQUIRED)
 file(GLOB SOURCES 
         "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
         #"${CMAKE_CURRENT_SOURCE_DIR}/include/ahrs/*.h"
+)
+
+###################################
+## catkin specific configuration ##
+###################################
+## The catkin_package macro generates cmake config files for your package
+## Declare things to be passed to dependent projects
+## INCLUDE_DIRS: uncomment this if your package contains header files
+## LIBRARIES: libraries you create in this project that dependent projects also need
+## CATKIN_DEPENDS: catkin_packages dependent projects also need
+## DEPENDS: system dependencies of this project that dependent projects also need
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES ahrs
+  #CATKIN_DEPENDS 
+  #DEPENDS 
 )
 
 include_directories(include)
