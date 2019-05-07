@@ -26,7 +26,10 @@ catkin_package(
   #DEPENDS 
 )
 
-include_directories(include)
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+)
 
 list(REMOVE_ITEM SOURCES 
         ${CMAKE_CURRENT_SOURCE_DIR}/src/TimeStamp.cpp
@@ -53,10 +56,10 @@ set_target_properties(ahrs PROPERTIES
   FRAMEWORK TRUE
 )
 
-add_executable(NavXTimeStamp
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/TimeStamp.cpp"
-)
-target_link_libraries(NavXTimeStamp ahrs ${CMAKE_THREAD_LIBS_INIT})
+#add_executable(NavXTimeStamp
+#        "${CMAKE_CURRENT_SOURCE_DIR}/src/TimeStamp.cpp"
+#)
+#target_link_libraries(NavXTimeStamp ahrs ${CMAKE_THREAD_LIBS_INIT})
 #target_compile_features(NavXTimeStamp PRIVATE cxx_range_for)
 
 install(TARGETS ahrs 
