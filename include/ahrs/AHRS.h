@@ -110,6 +110,8 @@ private:
 
     InertialDataIntegrator *integrator;
     ContinuousAngleTracker *yaw_angle_tracker;
+    ContinuousAngleTracker *pitch_angle_tracker;
+    ContinuousAngleTracker *roll_angle_tracker;
     OffsetTracker *         yaw_offset_tracker;
     IIOProvider *           io;
 
@@ -158,7 +160,9 @@ public:
     float  GetDisplacementY();
     float  GetDisplacementZ();
     double GetAngle();
-    double GetRate();
+    double GetYawRate();
+    double GetPitchRate();
+    double GetRollRate();
     void   Reset();
     float  GetRawGyroX();
     float  GetRawGyroY();

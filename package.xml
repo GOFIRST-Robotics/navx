@@ -1,24 +1,26 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>navx</name>
   <version>1.0.0</version>
-  <description>
-    AHRS library for Nav X Micro used by University of Minnesota Robotics
-  </description>
+  <description>The navx package</description>
 
-  <maintainer email="need@to.do">todo</maintainer>
+  <maintainer email="schat127@umn.edu">nick</maintainer>
 
   <license>MIT</license>
 
-  <url type="website">todo</url>
-  <url type="repository">https://github.com/GOFIRST-Robotics/navXTimeSync</url>
-  <url type="bugtracker">todo</url>
-
-  <author email="need@to.do">todo</author>
-  <author email="need@to.do">todo</author>
+  <author email="yanto003@umn.edu">Andrew Yantos</author>
+  <author email="sauve031@umn.edu">Jude Suave</author>
+  <author email="schat127@umn.edu">Nick Schatz</author>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>roscpp</depend>
 
-  <test_depend>boost</test_depend>
 
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
 </package>

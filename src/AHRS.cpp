@@ -125,6 +125,8 @@ class AHRSInternal : public IIOCompleteNotification, public IBoardCapabilities {
         ahrs->displacement[2] = ahrs_update.disp_z;
 
         ahrs->yaw_angle_tracker->NextAngle(ahrs->GetYaw());
+        ahrs->pitch_angle_tracker->NextAngle(ahrs->GetPitch());
+        ahrs->roll_angle_tracker->NextAngle(ahrs->GetRoll());
         ahrs->last_sensor_timestamp	= sensor_timestamp;
     }
 
@@ -220,6 +222,8 @@ class AHRSInternal : public IIOCompleteNotification, public IBoardCapabilities {
                 ahrs->is_moving);
 
         ahrs->yaw_angle_tracker->NextAngle(ahrs->GetYaw());
+        ahrs->pitch_angle_tracker->NextAngle(ahrs->GetPitch());
+        ahrs->roll_angle_tracker->NextAngle(ahrs->GetRoll());
     }
 
     void SetBoardID(AHRSProtocol::BoardID& board_id) {
@@ -883,6 +887,8 @@ void AHRS::commonInit( uint8_t update_rate_hz ) {
     yaw_offset_tracker = new OffsetTracker(YAW_HISTORY_LENGTH);
     integrator = new InertialDataIntegrator();
     yaw_angle_tracker = new ContinuousAngleTracker();
+    pitch_angle_tracker = new ContinuousAngleTracker();
+    roll_angle_tracker = new ContinuousAngleTracker();
 
     yaw =
             pitch =
@@ -979,9 +985,35 @@ double AHRS::GetAngle() {
  * @return The current rate of change in yaw angle (in degrees per second)
  */
 
-double AHRS::GetRate() {
+double AHRS::GetYawRate() {
     return yaw_angle_tracker->GetRate();
 }
+
+/**
+ * Return the rate of rotation of the pitch (X-axis) gyro, in degrees per second.
+ *<p>
+ * The rate is based on the most recent reading of the pitch gyro angle.
+ *<p>
+ * @return The current rate of change in pitch angle (in degrees per second)
+ */
+
+double AHRS::GetPitchRate() {
+    return yaw_angle_tracker->GetRate();
+}
+
+/**
+ * Return the rate of rotation of the roll (Y-axis) gyro, in degrees per second.
+ *<p>
+ * The rate is based on the most recent reading of the roll gyro angle.
+ *<p>
+ * @return The current rate of change in roll angle (in degrees per second)
+ */
+
+double AHRS::GetRollRate() {
+    return roll_angle_tracker->GetRate();
+}
+
+
 
 /**
  * Reset the Yaw gyro.

@@ -1,29 +1,16 @@
-## navXTimeSync
+## navx_node
 
-A Linux/MacOS C++ library for Kauai Labs navX-MXP sensor
+An ROS node for the NavX IMU from Kauai Labs
 
-## Usage
+Subscribers (inputs)
+- update_timer (Timer) : Update loop for reading / querying IMU
 
-* Installs the library into the system and compiles test executable
+Publishers (outputs)
+- imu_pub (sensor_msgs/Imu): imu/data : The published imu data
+- euler_pub (geometry_msgs/Point): imu/euler : Euler angles RPY (degrees)
 
-* Library installed under the name `libahrs.so` 
-
-* Library exposed with header file `"AHRS.h"`
-
-* Includes test code under `TimeStamp.h/cpp` compiled to executable `NavXTimeStamp`
-
-* Example compilation: `g++ -std=c++11 -o NavXTimeStamp TimeStamp.cpp -lahrs`
-
-## Installation
-
-```bash
-# cd working directory
-git clone https://github.com/FRC900/navXTimeSync.git 
-cd navXTimeSync
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
-cd ..
-```
+Parameters (settings)
+- frequency (double): default=50.0 : The update frequency of the update loop
+- publish_euler (bool): default=false : Whether to publish euler angles on euler_pub
+- device_path (string): default="/dev/ttyACM0" : The serial port path
+- frame_id (string): default="imu_link" : IMU message frame ID
