@@ -2,24 +2,15 @@
   <!-- 
   navx.launch
   VERSION: 1.0.0 
-  LAST_CHANGED: 2019-10-07
+  LAST_CHANGED: 2019-10-31
   AUTHOR: Nick Schatz
   -->
 <launch>
-<!-- Interface: 
-  Pub: 
-    imu/data (sensor_msgs/Imu)
-    imu/euler (geometry_msgs/Point)
-  Param: 
-    frequency (double) 50.0; The frequency of the read loop
-    publish_euler (bool) false; Whether to publish euler orientation
-    device_path (string) /dev/ttyACM0; The device serial port path
-    frame_id (string) imu_link; The Imu message header frame ID
-  -->
   <node pkg="navx" type="navx_node" name="navx" output="screen" respawn="true">
     <param name="frequency" value="50.0"/>
     <param name="publish_euler" value="false"/>
     <param name="device_path" value="/dev/ttyACM0"/>
     <param name="frame_id" value="imu_link"/>
+    <param name="covar_samples" value="100"/>
   </node>
 </launch>

@@ -11,6 +11,7 @@ Publishers (outputs)
 
 Parameters (settings)
 - frequency (double): default=50.0 : The update frequency of the update loop
-- publish_euler (bool): default=false : Whether to publish euler angles on euler_pub
+- euler_enable (bool): default=false : Whether to publish euler angles on euler_pub
 - device_path (string): default="/dev/ttyACM0" : The serial port path
 - frame_id (string): default="imu_link" : IMU message frame ID
+- covar_samples (int): default=100 : Number of samples to store to calculate covariance
