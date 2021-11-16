@@ -27,7 +27,7 @@ catkin_package(
   LIBRARIES navx
   CATKIN_DEPENDS sensor_msgs roscpp
 #  DEPENDS system_lib
-  DEPENDS Threads
+#  DEPENDS Threads
 )
 
 ###########
