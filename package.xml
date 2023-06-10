@@ -1,26 +1,29 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>navx</name>
-  <version>1.0.0</version>
-  <description>The navx package</description>
+  <version>1.1.6</version>
+  <description>C++ package for the NavX IMU</description>
+  <maintainer email="brogn002@umn.edu">Anthony Brogni</maintainer>
+  <license>MIT License</license>
 
-  <maintainer email="schat127@umn.edu">nick</maintainer>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <license>MIT</license>
+  <build_depend>rclcpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
 
-  <author email="yanto003@umn.edu">Andrew Yantos</author>
-  <author email="sauve031@umn.edu">Jude Suave</author>
-  <author email="schat127@umn.edu">Nick Schatz</author>
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <depend>sensor_msgs</depend>
-  <depend>geometry_msgs</depend>
-  <depend>roscpp</depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
-
-  <!-- The export tag contains other, unspecified, tags -->
   <export>
-    <!-- Other tools can request additional information be placed here -->
-
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
