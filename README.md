@@ -1,11 +1,8 @@
 ## navx_node
 
-An ROS node for the NavX IMU from Kauai Labs
+An ROS 2 node for the NavX IMU from Kauai Labs.
 
-Subscribers (inputs)
-- update_timer (Timer) : Update loop for reading / querying IMU
-
-Publishers (outputs)
+Publishers
 - imu_pub (sensor_msgs/Imu): imu/data : The published imu data
 - euler_pub (geometry_msgs/Point): imu/euler : Euler angles RPY (degrees)
 
