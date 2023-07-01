@@ -1,8 +1,8 @@
 /*
  * navx_node.cpp
  * Runs the Kauai Labs NavX IMU, using a modified NavX library
- * VERSION: 1.1.6
- * Last changed: January 2023
+ * VERSION: 1.1.7
+ * Last changed: July 2023
  * Original Author: Jude Sauve <sauve031@umn.edu>
  * Maintainer: Anthony Brogni <brogn002@umn.edu>
  * MIT License
@@ -36,7 +36,7 @@
 #include "ahrs/AHRS.h"
 #include "AHRS.cpp"
 
-// Node Settings
+// Parameters //
 double frequency = 50.0;
 bool euler_enable = false;
 std::string device_path = "/dev/NavX_IMU"; // Set this as a static Serial Port!
@@ -46,12 +46,12 @@ int covar_samples = 100;
 int counter = 0; // publish less often
 
 // Custom Data Structure for storing IMU data
-typedef struct
+using OrientationEntry = struct
 {
   float ypr[3];
   float ang_vel[3];
   float accel[3];
-} OrientationEntry;
+};
 
 // Global Variables
 AHRS *imu;   // Instantiate an AHRS (gyroscope) object
@@ -128,7 +128,7 @@ public:
   }
 
 private:
-  void timer_callback()
+  void timer_callback() const
   {
     // Calculate orientation
     OrientationEntry curOrientation;
